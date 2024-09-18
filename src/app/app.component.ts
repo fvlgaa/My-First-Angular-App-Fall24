@@ -11,6 +11,6 @@ import {DatePipe} from "@angular/common";
 })
 export class AppComponent {
   title = 'My-First-Angular';
-  description: string = 'This is my first Angular application.'; // New variable
-  currentDate: Date = new Date();
+  class: string = 'object-oriented analysis & des '; // New variable
+  teacher: string = "Matthew Huang";
 }
