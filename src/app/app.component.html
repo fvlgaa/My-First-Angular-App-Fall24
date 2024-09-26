@@ -1,14 +1,33 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head> <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
 
-  </title>
+  
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, inital-scale=1.0>
+  <title> Assignment 2</title>
 </head>
 <body>
-<h1>My Name is {{title}}</h1>
-<h2>This is {{class}}</h2>
-<h3>The Name {{teacher}}</h3>
+<div class="container"›
+  <h2>Phones List</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Company</th>
+      <th>Storage (GB)</th>
+      <th>Smartphone</th>
+    </tr>
+    <tr *ngFor="let phone of phonesList">
+      <td>{{ phone.id }}</td>
+      <td>{{ phone.name }}</td>
+      <td>{{ phone.company }}</td>
+      <td>{{ phone.storage }}</td>
+      <td *ngIf="phone.smartPhone">Yes</td>
+      <td *ngIf="!phone.smartPhone">No</td>
+    </tr>
+  </table>
+</div>
 </body>
+  
 </html>
