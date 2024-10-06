@@ -13,4 +13,5 @@ export class AppComponent {
   title = 'My-First-Angular';
   class: string = 'object-oriented analysis & des '; // New variable
   teacher: string = "Matthew Huang";
+  phonesList: any;
 }
