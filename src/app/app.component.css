@@ -1,0 +1,35 @@
+.app-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #bdbd10;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #bf0c2a;
+}
+
+h2 {
+  color: #c67c6c;
+}
+
+h3 {
+  color: #007bff;
+  margin-top: 20px;
+}
+
+h4 {
+  color: #495057;
+  margin-bottom: 5px;
+}
+
+p {
+  color: #ca0e9b;
+  margin: 5px 0;
+}
+
+hr {
+  margin: 15px 0;
+  border: 1px solid #e9ecef;
+}
