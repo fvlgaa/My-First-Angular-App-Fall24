@@ -1,0 +1,13 @@
+<div class="phone-list">
+  <h3>Available Phones</h3>
+  <div *ngIf="phoneList.length > 0; else noPhones">
+    <div *ngFor="let phone of phoneList">
+      <app-phone-list-item [phoneItem]="phone"></app-phone-list-item>
+    </div>
+  </div>
+  <ng-template #noPhones>
+    <p>No phones available.</p>
+  </ng-template>
+</div>
+
+
