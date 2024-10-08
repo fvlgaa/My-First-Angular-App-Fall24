@@ -2,13 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {phone} from "../models/phones";
 import {PhoneListItemComponent} from "../phone-list-item/phone-list-item.component";
 import {PhonesService} from "../services/phones.service";
-import * as console from "node:console";
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-phone-list',
   standalone: true,
   imports: [
-    PhoneListItemComponent
+    PhoneListItemComponent,
+    CommonModule
   ],
   templateUrl: './phone-list.component.html',
   styleUrl: './phone-list.component.css'
