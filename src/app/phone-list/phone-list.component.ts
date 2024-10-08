@@ -19,8 +19,8 @@ export class PhoneListComponent implements OnInit {
   constructor(private phonesService: PhonesService) { }
   ngOnInit(): void {
     this.phonesService.getPhones().subscribe({
-      next: (phones: phone[]) => this.phoneList = phones,
-      error:(err) => console.error("error fetching phones"),
+      next: (data : phone[]) => this.phoneList = data,
+      error:err => console.error("error fetching phones"),
       complete:()  => console.log("fetching completed"),
     });
 
