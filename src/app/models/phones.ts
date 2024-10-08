@@ -6,4 +6,5 @@ export interface phone {
   isSmartphone : boolean;
 
 
+
 }
