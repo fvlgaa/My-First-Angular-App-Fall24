@@ -1,1 +1,137 @@
 /* You can add global styles to this file, and also import other style files */
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.navbar ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 18px;
+}
+
+.navbar ul li a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* Main Content */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Modify List Item Page */
+.modify-item-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modify-item-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modify-item-container form input,
+.modify-item-container form select,
+.modify-item-container form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modify-item-container form button {
+  align-self: flex-end;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+}
+.phone-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.phone-list th, .phone-list td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.phone-list th {
+  background-color: #f4f4f4;
+}
+
+.phone-image {
+  width: 50px; /* Set the width of the images */
+  height: auto; /* Maintain aspect ratio */
+}

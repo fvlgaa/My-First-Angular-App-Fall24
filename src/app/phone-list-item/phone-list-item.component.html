@@ -2,4 +2,13 @@
   <h4>{{ phoneItem.brand }} {{ phoneItem.model }}</h4>
   <p><strong>Price:</strong> ${{ phoneItem.price | number:'1.2-2' }}</p>
   <p><strong>Smartphone:</strong> {{ phoneItem.isSmartphone ? 'Yes' : 'No' }}</p>
+
+
+    <img
+            [ngSrc]="phoneItem.ImageUrl"
+            alt="{{ phoneItem.brand }} {{ phoneItem.model }}"
+            width="200"
+            height="auto"
+            style="margin-top: 10px; display: block;"
+    />
 </div>

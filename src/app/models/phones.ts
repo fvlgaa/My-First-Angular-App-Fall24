@@ -4,6 +4,9 @@ export interface phone {
   model: string;
   price: number;
   isSmartphone : boolean;
+  ImageUrl: string;
+
+
 
 
 

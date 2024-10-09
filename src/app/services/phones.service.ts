@@ -37,4 +37,8 @@ export class PhonesService {
     return of(PHone);
 
   }
+
+  generateNewId(): number {
+    return this.phones.length > 0 ? Math.max(...this.phones.map(p => p.id)) + 1 : 1;
+  }
 }

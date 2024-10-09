@@ -1,13 +1,31 @@
 <div class="phone-list">
-  <h3>Available Phones</h3>
-  <div *ngIf="phoneList.length > 0; else noPhones">
-    <div *ngFor="let phone of phoneList">
-      <app-phone-list-item [phoneItem]="phone"></app-phone-list-item>
+    <h3>Available Phones</h3>
+    <div *ngIf="phoneList.length > 0; else noPhones">
+        <table>
+            <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Smartphone</th>
+                <th>Image</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let phone of phoneList">
+                <td>{{ phone.brand }}</td>
+                <td>{{ phone.model }}</td>
+                <td>${{ phone.price | number:'1.2-2' }}</td>
+                <td>{{ phone.isSmartphone ? 'Yes' : 'No' }}</td>
+                <td>
+                    <img [src]="phone.ImageUrl" alt="{{ phone.brand }} {{ phone.model }}" class="phone-image" />
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
-  <ng-template #noPhones>
-    <p>No phones available.</p>
-  </ng-template>
+    <ng-template #noPhones>
+        <p>No phones available.</p>
+    </ng-template>
 </div>
-
 

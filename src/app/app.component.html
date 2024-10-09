@@ -1,9 +1,22 @@
+<nav class="navbar">
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/modify-phone">Modify List Item</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet> <!-- This will display the routed component -->
+
+
+
 <div>
   <h1>{{title}}</h1>
-  <app-phone-list-item [phoneItem]="singlePhone ? singlePhone : { id: 0, brand: '', model: '', price: 0, isSmartphone: false }"></app-phone-list-item>
+  <app-phone-list-item
+    *ngIf="singlePhone"
+    [phoneItem]="singlePhone"></app-phone-list-item>
 
 
-  <app-phone-list></app-phone-list>
+
 </div>
 
 

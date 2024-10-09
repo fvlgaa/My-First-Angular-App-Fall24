@@ -1,0 +1,43 @@
+<p>modify-phone works!</p>
+<div>
+  <h2 *ngIf="phone">Modify Phone</h2>
+  <h2 *ngIf="!phone">Add Phone</h2>
+
+  <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="brand">Brand:</label>
+      <input id="brand" formControlName="brand" required>
+    </div>
+
+    <div>
+      <label for="model">Model:</label>
+      <input id="model" formControlName="model" required>
+    </div>
+
+    <div>
+      <label for="price">Price:</label>
+      <input id="price" type="number" formControlName="price" required>
+    </div>
+
+    <div>
+      <label for="isSmartphone">Is Smartphone:</label>
+      <input id="isSmartphone" type="checkbox" formControlName="isSmartphone">
+    </div>
+
+    <div>
+      <label for="descriptionImage">Image URL:</label>
+      <input id="descriptionImage" formControlName="descriptionImage">
+    </div>
+
+    <button type="submit">Submit</button>
+    <button type="button" (click)="onDelete()" *ngIf="phone">Delete</button>
+    <button type="button" (click)="navigateToPhoneList()">Cancel</button>
+    <button type="submit">Submit</button>
+
+    <!-- Delete Button (Always Displayed Now) -->
+    <button type="button" (click)="onDelete()">Delete</button>
+
+    <!-- Back Button -->
+    <button type="button" (click)="navigateToPhoneList()">Back to List</button>
+  </form>
+</div>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 import {DatePipe, DecimalPipe} from '@angular/common';
 import { phone } from'./models/phones';
 import {NgForOf, NgIf} from "@angular/common";
@@ -11,12 +11,12 @@ import { PhonesService} from "./services/phones.service";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DatePipe, DecimalPipe, NgForOf, NgIf, PhoneListComponent, PhoneListItemComponent,],
+  imports: [RouterOutlet, DatePipe, DecimalPipe, NgForOf, NgIf, PhoneListComponent, PhoneListItemComponent, RouterLink,],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'leke repairs';
+  title = 'New Phones by leke';
   singlePhone?: phone;
   constructor(private phonesService: PhonesService) {
   }
