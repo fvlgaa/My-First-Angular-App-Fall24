@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {DatePipe, DecimalPipe} from '@angular/common';
 import { phone } from'./models/phones';
 import {NgForOf, NgIf} from "@angular/common";
@@ -11,7 +11,7 @@ import { PhonesService} from "./services/phones.service";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DatePipe, DecimalPipe, NgForOf, NgIf, PhoneListComponent, PhoneListItemComponent, RouterLink,],
+  imports: [RouterOutlet, DatePipe, DecimalPipe, NgForOf, NgIf, PhoneListComponent, PhoneListItemComponent, RouterLink, RouterLinkActive,],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

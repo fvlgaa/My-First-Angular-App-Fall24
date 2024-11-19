@@ -20,6 +20,13 @@
                 <td>
                     <img [src]="phone.ImageUrl" alt="{{ phone.brand }} {{ phone.model }}" class="phone-image" />
                 </td>
+              <td>
+                <!-- Edit Button -->
+                <button class="btn btn-edit" (click)="onEdit(phone)">Edit</button>
+
+                <!-- Delete Button -->
+                <button class="btn btn-delete" (click)="onDelete(phone.id)">Delete</button>
+              </td>
             </tr>
             </tbody>
         </table>

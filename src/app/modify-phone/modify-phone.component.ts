@@ -75,18 +75,12 @@ export class ModifyPhoneComponent  implements OnInit{
       this.phonesService.addPhone(updatedPhone); // Add new phone
     }
 
-    this.router.navigate(['/']); // Navigate back to the home page after submitting
+    this.router.navigate(['/phone']); // Navigate back to the home page after submitting
   }
-
-  onDelete(): void {
-    const id = this.phoneForm.get('id')?.value;
-    if (id) {
-      this.phonesService.deletePhone(id); // Delete the phone
-      this.router.navigate(['/']); // Navigate back to the home page
-    }
+  onAdd(): void {
+    this.onSubmit()
   }
-
-  navigateToPhoneList(): void {
-    this.router.navigate(['/']); // Navigate to the phone list
+  onUpdate(): void {
+    this.onSubmit()
   }
 }
