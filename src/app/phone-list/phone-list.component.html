@@ -1,32 +1,31 @@
 <div class="phone-list">
     <h3>Available Phones</h3>
     <div *ngIf="phoneList.length > 0; else noPhones">
-        <table>
+        <table class = "phone-table">
             <thead>
             <tr>
-                <th>Brand</th>
-                <th>Model</th>
-                <th>Price</th>
-                <th>Smartphone</th>
-                <th>Image</th>
+                <th class="table-header">Brand</th>
+
+                <th class="table-header">Model</th>
+                <th class="table-header">Price</th>
+                <th class="table-header">Smartphone</th>
+                <th class="table-header">Image</th>
+                <th class="table-header">Edit</th>
+                <th class="table-header">Delete</th>
+
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let phone of phoneList">
-                <td>{{ phone.brand }}</td>
-                <td>{{ phone.model }}</td>
-                <td>${{ phone.price | number:'1.2-2' }}</td>
-                <td>{{ phone.isSmartphone ? 'Yes' : 'No' }}</td>
-                <td>
-                    <img [src]="phone.ImageUrl" alt="{{ phone.brand }} {{ phone.model }}" class="phone-image" />
+            <tr *ngFor="let phone of phoneList" class="table-row">
+                <td class="table-cell">{{ phone.brand }}</td>
+                <td class="table-cell">{{ phone.model }}</td>
+                <td class="table-cell">${{ phone.price | number:'1.2-2' }}</td>
+                <td class="table-cell">{{ phone.isSmartphone ? 'Yes' : 'No' }}</td>
+                <td class="table-cell">
+                    <img [src]="phone.ImageUrl"  class="phone-image" />
                 </td>
-              <td>
-                <!-- Edit Button -->
-                <button class="btn btn-edit" (click)="onEdit(phone)">Edit</button>
-
-                <!-- Delete Button -->
-                <button class="btn btn-delete" (click)="onDelete(phone.id)">Delete</button>
-              </td>
+              <td class="table-cell"><button type="button" (click)="onEdit()" class="btn edit-btn">Edit</button></td>
+              <td class="table-cell"><button type="button" (click)="onDelete(phone.id)" class="btn delete-btn">Delete</button></td>
             </tr>
             </tbody>
         </table>

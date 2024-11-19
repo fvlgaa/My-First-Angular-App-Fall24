@@ -25,7 +25,7 @@
     </div>
 
     <div>
-      <label for="descriptionImage">Image URL:</label>
+      <label for="descriptionImage">Image description:</label>
       <input id="descriptionImage" formControlName="descriptionImage">
     </div>
 
@@ -33,9 +33,6 @@
     <button type="button" (click)="onDelete()" *ngIf="phone">Delete</button>
     <button type="button" (click)="navigateToPhoneList()">Cancel</button>
     <button type="submit">Submit</button>
-
-    <!-- Delete Button (Always Displayed Now) -->
-    <button type="button" (click)="onDelete()">Delete</button>
 
     <!-- Back Button -->
     <button type="button" (click)="navigateToPhoneList()">Back to List</button>

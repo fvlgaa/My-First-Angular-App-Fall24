@@ -28,13 +28,17 @@ export class PhonesService {
     }
     return of(this.phones);
   }
-  deletePhone(id: number): Observable<phone[]> {
-      this.phones = this.phones.filter(p => p.id === id);
-      return of (this.phones);
+  deletePhone(id: number) {
+    console.log("Service Delete Working");
+    delete this.phones[id - 1]
+
+
+      //this.phones = this.phones.filter(p => p.id === id);
+      //return of (this.phones);
   }
   getPhonesById(id: number): Observable< phone | undefined>{
-    const PHone = this.phones.find(p => p.id === id);
-    return of(PHone);
+    const Phone = this.phones.find(p => p.id === id);
+    return of(Phone);
 
   }
 
