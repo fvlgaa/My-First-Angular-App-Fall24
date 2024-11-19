@@ -5,7 +5,7 @@
             <thead>
             <tr>
                 <th class="table-header">Brand</th>
-
+                <th class="table-header">ID</th>
                 <th class="table-header">Model</th>
                 <th class="table-header">Price</th>
                 <th class="table-header">Smartphone</th>
@@ -18,6 +18,7 @@
             <tbody>
             <tr *ngFor="let phone of phoneList" class="table-row">
                 <td class="table-cell">{{ phone.brand }}</td>
+                <td class="table-cell">{{ phone.id }}</td>
                 <td class="table-cell">{{ phone.model }}</td>
                 <td class="table-cell">${{ phone.price | number:'1.2-2' }}</td>
                 <td class="table-cell">{{ phone.isSmartphone ? 'Yes' : 'No' }}</td>
