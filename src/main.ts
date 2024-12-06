@@ -11,10 +11,17 @@ import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.compone
 const routes:Routes = [
   {path:'', redirectTo: '/phone', pathMatch: 'full'},
   {path: 'phone', component: PhoneListComponent},
-  {path: 'phone/:id', component: PhoneListItemComponent},
-  {path: 'modify-phone', component: ModifyPhoneComponent},
-  {path: '**', component: PageNotFoundComponent},
-]
+  {path: 'phone/:id',
+  loadComponent: () =>
+  import('./app/phone-list-item/phone-list-item.component').then(m => m.PhoneListItemComponent) }, //Lazy Loaded
+{ path: 'modify-phone',
+  loadComponent: () =>
+  import('./app/modify-phone/modify-phone.component').then(m => m.ModifyPhoneComponent) },
+{ path: '**',
+  loadComponent: () =>
+  import('./app/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent) },
+];
+
 bootstrapApplication(AppComponent, {
   providers:[provideRouter(routes)
   ]
