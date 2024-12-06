@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {DatePipe, DecimalPipe} from '@angular/common';
-import { phone } from'./models/phones';
+import { phone } from './models/phones';
 import {NgForOf, NgIf} from "@angular/common";
 import {PhoneListComponent} from "./phone-list/phone-list.component";
 import {phoneList} from "./models/mockPhones.data";
