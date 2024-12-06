@@ -5,6 +5,9 @@ export interface phone {
   price: number;
   isSmartphone : boolean;
   ImageUrl: string;
+  releaseDate: string;
+  department: string;
+  monthlyPayments: number;
 
 
 

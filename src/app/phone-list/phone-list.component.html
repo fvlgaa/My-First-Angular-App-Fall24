@@ -24,7 +24,9 @@
                 <td class="table-cell">{{ phone.isSmartphone ? 'Yes' : 'No' }}</td>
                 <td class="table-cell">
                     <img [src]="phone.ImageUrl"  class="phone-image" />
-                </td>
+              <td>{{ phone.releaseDate | date:'longDate' }}</td>
+              <td>{{ phone.department | uppercase }}</td>
+              <td>{{ phone.monthlyPayment | currency:'USD':'symbol':'1.2-2' }}</td>
               <td class="table-cell"><button type="button" (click)="onEdit()" class="btn edit-btn">Edit</button></td>
               <td class="table-cell"><button type="button" (click)="onDelete(phone.id)" class="btn delete-btn">Delete</button></td>
             </tr>

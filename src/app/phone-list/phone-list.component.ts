@@ -4,13 +4,19 @@ import {PhoneListItemComponent} from "../phone-list-item/phone-list-item.compone
 import {PhonesService} from "../services/phones.service";
 import {CommonModule} from '@angular/common';
 import {Router} from "@angular/router";
+import {CurrencyPipe, LowerCasePipe, NgClass, NgForOf, UpperCasePipe} from "@angular/common";
 
 @Component({
   selector: 'app-phone-list',
   standalone: true,
   imports: [
     PhoneListItemComponent,
-    CommonModule
+    CommonModule,
+    CurrencyPipe,
+    LowerCasePipe,
+    NgClass,
+    NgForOf,
+    UpperCasePipe
   ],
   templateUrl: './phone-list.component.html',
   styleUrl: './phone-list.component.css'
