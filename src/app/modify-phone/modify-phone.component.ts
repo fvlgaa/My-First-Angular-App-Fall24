@@ -11,7 +11,10 @@ import {catchError, map, of, switchMap} from "rxjs";
 import {PhonesService} from "../services/phones.service";
 import {phoneList} from "../models/mockPhones.data";
 import {FocusDirective} from "../directives/focus.directive";
-
+import {MatFormField, MatLabel} from '@angular/material/form-field';
+import {MatInput, MatInputModule} from "@angular/material/input";
+import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
+import {MatTooltip} from "@angular/material/tooltip";
 @Component({
   selector: 'app-modify-phone',
   standalone: true,
@@ -20,7 +23,15 @@ import {FocusDirective} from "../directives/focus.directive";
     PhoneListComponent,
     PhoneListItemComponent,
     ReactiveFormsModule,
-    FocusDirective
+    FocusDirective,
+    MatLabel,
+    MatCheckbox,
+    MatTooltip,
+    MatFormField,
+    MatInput,
+    MatInputModule,
+    MatCheckboxModule
+
   ],
   templateUrl: './modify-phone.component.html',
   styleUrl: './modify-phone.component.css'

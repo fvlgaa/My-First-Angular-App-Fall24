@@ -1,3 +1,4 @@
+<!--
 <nav class="navbar">
   <ul>
     <li><a routerLink="/phones" routerLinkActive>Phone</a></li>
@@ -5,7 +6,6 @@
   </ul>
 </nav>
 
-<router-outlet></router-outlet> <!-- This will display the routed component -->
 
 
 
@@ -14,8 +14,19 @@
   <app-phone-list-item
     *ngIf="singlePhone"
     [phoneItem]="singlePhone"></app-phone-list-item>
+-->
 
+<mat-toolbar color="primary">
+  <span>leke's phone store</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/phone" routerLinkActive="active">phone List</button>
+  <button mat-button routerLink="/modify-phone" routerLinkActive="active">Modify phone</button>
+</mat-toolbar>
 
+<div class="app-container">
+  <h1>{{ title }}</h1>
+
+  <router-outlet></router-outlet>
 
 </div>
 

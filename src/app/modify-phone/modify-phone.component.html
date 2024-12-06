@@ -28,7 +28,9 @@
   <mat-checkbox formControlName="isSmartPhone" matTooltip="Check if smartphone">Smartphone</mat-checkbox>
 
   <div class="form-buttons">
-    <!-- Submit button -->
+
+    <button type="button" (click)="onAdd()" class="btn add-btn">Add</button>
+    <button type="button" (click)="onUpdate()" class="btn update-btn">Update</button>
     <button type="submit" class="btn submit-btn">Submit</button>
   </div>
 
