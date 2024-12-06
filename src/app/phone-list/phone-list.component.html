@@ -16,25 +16,24 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let phone of phoneList" class="table-row">
-                <td class="table-cell">{{ phone.brand }}</td>
+            <tr *ngFor="let phone of phoneList" [routerLink]="['/phone',phone.id]"[appHoverHighlight]="'red'" class="table-row">
+               <!-- <td class="table-cell">{{ phone.brand }}</td>-->
                 <td class="table-cell">{{ phone.id }}</td>
-                <td class="table-cell">{{ phone.model }}</td>
-                <td class="table-cell">${{ phone.price | number:'1.2-2' }}</td>
-                <td class="table-cell">{{ phone.isSmartphone ? 'Yes' : 'No' }}</td>
-                <td class="table-cell">
-                    <img [src]="phone.ImageUrl"  class="phone-image" />
-              <td>{{ phone.releaseDate | date:'longDate' }}</td>
-              <td>{{ phone.department | uppercase }}</td>
-              <td>{{ phone.monthlyPayment | currency:'USD':'symbol':'1.2-2' }}</td>
-              <td class="table-cell"><button type="button" (click)="onEdit()" class="btn edit-btn">Edit</button></td>
-              <td class="table-cell"><button type="button" (click)="onDelete(phone.id)" class="btn delete-btn">Delete</button></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <ng-template #noPhones>
-        <p>No phones available.</p>
-    </ng-template>
+                <td class="table-cell">{{ phone | phoneLength | uppercase }}</td>
+              <!-- <td class="table-cell">{{ phone.model }}</td>-->
+               <td class="table-cell">${{ phone.price | number:'1.2-2' }}</td>
+               <td class="table-cell">{{ phone.isSmartphone ? 'Yes' : 'No' }}</td>
+               <td class="table-cell">
+                   <img [src]="phone.ImageUrl"  class="phone-image" />
+             <td>{{ phone.releaseDate | date:'longDate' }}</td>
+             <td>{{ phone.department | uppercase }}</td>
+             <td>{{ phone.monthlyPayments | currency:'USD':'symbol':'1.2-2' }}</td>
+             <td class="table-cell"><button type="button" (click)="onEdit()" class="btn edit-btn">Edit</button></td>
+             <td class="table-cell"><button type="button" (click)="onDelete(phone.id)" class="btn delete-btn">Delete</button></td>
+           </tr>
+           </tbody>
+       </table>
+   </div>
+
 </div>
 

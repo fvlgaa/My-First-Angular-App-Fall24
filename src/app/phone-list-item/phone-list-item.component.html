@@ -1,14 +1,8 @@
-<div style="border: 2px solid #ccc; padding: 10px; margin: 10px;">
-  <h4>{{ phoneItem.brand }} {{ phoneItem.model }}</h4>
-  <p><strong>Price:</strong> ${{ phoneItem.price | number:'1.2-2' }}</p>
-  <p><strong>Smartphone:</strong> {{ phoneItem.isSmartphone ? 'Yes' : 'No' }}</p>
-
-
-    <img
-            [ngSrc]="phoneItem.ImageUrl"
-            alt="{{ phoneItem.brand }} {{ phoneItem.model }}"
-            width="200"
-            height="auto"
-            style="margin-top: 10px; display: block;"
-    />
+<div *ngIf="phone" class="phone-details">
+  <p>Phone ID: {{ phone.id }}</p>
+  <p>Phone Model: {{ phone.model }}</p>
+  <p>Phone Brand: {{ phone.brand }}</p>
+  <p>Price: {{ phone.price | currency }}</p>
+  <p>Smartphone: {{ phone.isSmartPhone ? 'Yes' : 'No' }}</p>
 </div>
+

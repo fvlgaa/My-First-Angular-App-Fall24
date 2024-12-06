@@ -9,6 +9,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {NgIf} from "@angular/common";
 import {catchError, map, of, switchMap} from "rxjs";
 import {PhonesService} from "../services/phones.service";
+import {phoneList} from "../models/mockPhones.data";
+import {FocusDirective} from "../directives/focus.directive";
 
 @Component({
   selector: 'app-modify-phone',
@@ -17,7 +19,8 @@ import {PhonesService} from "../services/phones.service";
     NgIf,
     PhoneListComponent,
     PhoneListItemComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FocusDirective
   ],
   templateUrl: './modify-phone.component.html',
   styleUrl: './modify-phone.component.css'
@@ -25,8 +28,6 @@ import {PhonesService} from "../services/phones.service";
 export class ModifyPhoneComponent  implements OnInit{
   phoneForm: FormGroup;
   phone: phone | undefined;
-
-
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -47,32 +48,28 @@ export class ModifyPhoneComponent  implements OnInit{
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.phonesService.getPhones().pipe(
-        map((phones) => phones.find((phone) => phone.id === +id)),
-        catchError((err) => {
-          console.error(err);
-          return of(undefined);
-        })
-      ).subscribe((phone) => {
-        if (phone) {
+      this.phonesService.getPhonesById(+id).subscribe((phone) =>{
+        if(phone){
           this.phone = phone;
-          this.phoneForm.patchValue(phone); // Populate form with phone data
+          this.phoneForm.patchValue(phone);
         }
+
+
       });
     }
   }
 
   onSubmit(): void {
-    const updatedPhone: phone = this.phoneForm.value;
+    const phoneList: phone = this.phoneForm.value;
 
     // Check if we're updating an existing phone
-    if (this.phone) {
-      this.phonesService.updatePhone(updatedPhone); // Update the existing phone
+    if (phoneList.id) {
+      this.phonesService.updatePhone(phoneList); // Update the existing phone
     } else {
       // For adding a new phone, generate a new ID
       const newId = this.phonesService.generateNewId(); // This method should generate a new ID
-      updatedPhone.id = newId;
-      this.phonesService.addPhone(updatedPhone); // Add new phone
+      phoneList.id = newId;
+      this.phonesService.addPhone(phoneList); // Add new phone
     }
 
     this.router.navigate(['/phone']); // Navigate back to the home page after submitting

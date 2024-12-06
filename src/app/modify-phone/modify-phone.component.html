@@ -1,45 +1,35 @@
-<p>modify-phone works!</p>
-<div>
-  <h2 *ngIf="phone">Modify Phone</h2>
-  <h2 *ngIf="!phone">Add Phone</h2>
+<form [formGroup]="phoneForm" (ngSubmit)="onSubmit()" class="mat-form">
 
-  <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="brand">Brand:</label>
-      <input id="brand" formControlName="brand" required>
-    </div>
 
-    <div>
-      <label for="id">Id:</label>
-      <input id="id" formControlName="id" required>
-    </div>
+  <mat-form-field appearance="outline" class="form-field" disabled [appFocus]="'green'">
+    <mat-label>Phone ID</mat-label>
+    <input matInput type="number" formControlName="id" matTooltip="Add a phone ID"/>
+  </mat-form-field>
 
-    <div>
-      <label for="model">Model:</label>
-      <input id="model" formControlName="model" required>
-    </div>
+\
+  <mat-form-field appearance="outline" class="form-field" [appFocus]="'green'">
+    <mat-label>Phone Model</mat-label>
+    <input matInput type="text" formControlName="model" matTooltip="Add phone model"/>
+  </mat-form-field>
 
-    <div>
-      <label for="price">Price:</label>
-      <input id="price" type="number" formControlName="price" required>
-    </div>
 
-    <div>
-      <label for="isSmartphone">Is Smartphone:</label>
-      <input id="isSmartphone" type="checkbox" formControlName="isSmartphone">
-    </div>
+  <mat-form-field appearance="outline" class="form-field" [appFocus]="'green'">
+    <mat-label>Phone Brand</mat-label>
+    <input matInput type="text" formControlName="brand" matTooltip="Add phone brand"/>
+  </mat-form-field>
 
-    <div>
-      <label for="descriptionImage">Image description:</label>
-      <input id="descriptionImage" formControlName="descriptionImage">
-    </div>
 
-    <button type="submit">Submit</button>
-    <button type="button" (click)="onDelete()" *ngIf="phone">Delete</button>
-    <button type="button" (click)="navigateToPhoneList()">Cancel</button>
-    <button type="submit">Submit</button>
+  <mat-form-field appearance="outline" class="form-field" [appFocus]="'green'">
+    <mat-label>Phone Price</mat-label>
+    <input matInput type="number" formControlName="price" matTooltip="Add phone price"/>
+  </mat-form-field>
 
-    <!-- Back Button -->
-    <button type="button" (click)="navigateToPhoneList()">Back to List</button>
-  </form>
-</div>
+
+  <mat-checkbox formControlName="isSmartPhone" matTooltip="Check if smartphone">Smartphone</mat-checkbox>
+
+  <div class="form-buttons">
+    <!-- Submit button -->
+    <button type="submit" class="btn submit-btn">Submit</button>
+  </div>
+
+</form>

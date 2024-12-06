@@ -3,8 +3,10 @@ import {phone} from "../models/phones";
 import {PhoneListItemComponent} from "../phone-list-item/phone-list-item.component";
 import {PhonesService} from "../services/phones.service";
 import {CommonModule} from '@angular/common';
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {CurrencyPipe, LowerCasePipe, NgClass, NgForOf, UpperCasePipe} from "@angular/common";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {PhoneLengthPipe} from "../pipes/phone-length.pipe";
 
 @Component({
   selector: 'app-phone-list',
@@ -16,7 +18,10 @@ import {CurrencyPipe, LowerCasePipe, NgClass, NgForOf, UpperCasePipe} from "@ang
     LowerCasePipe,
     NgClass,
     NgForOf,
-    UpperCasePipe
+    UpperCasePipe,
+    HoverHighlightDirective,
+    RouterLink,
+    PhoneLengthPipe
   ],
   templateUrl: './phone-list.component.html',
   styleUrl: './phone-list.component.css'
